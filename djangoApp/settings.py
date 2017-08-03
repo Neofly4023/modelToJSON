@@ -25,7 +25,7 @@ SECRET_KEY = 'cap6&-=12llv=#l$c*ejrg6dy7vt4c7dqjq&--vcj_$nama350'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost','0.0.0.0']
+ALLOWED_HOSTS = ['localhost','0.0.0.0','127.0.0.1',]
 
 # This was added by me to allow other devices in local network to access
 # ( starting with 192.168 )
