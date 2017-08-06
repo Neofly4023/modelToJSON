@@ -28,7 +28,7 @@ def employees (request):
 		dictionary["position"]= v.position
 		myList.append(dictionary.copy())"""
 		
-	return HttpResponse(json.dumps(dictionary), content_type='application/json') #JsonResponse(myList,safe=False)
+	return HttpResponse(json.dumps({"Employees":dictionary}), content_type='application/json') #JsonResponse(myList,safe=False)
 
 
 
