@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['localhost','0.0.0.0','127.0.0.1',]
 # This was added by me to allow other devices in local network to access
 # ( starting with 192.168 )
 
-ALLOWED_HOSTS += ['192.168.%s.%s' %(i,j) for i in range(256) for j in range(256)]  
+ALLOWED_HOSTS += ['192.168.1.%s' %(i) for i in range(256)]  
 
 # Application definition
 
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'android',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

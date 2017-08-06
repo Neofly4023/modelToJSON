@@ -15,8 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import url , include
 from django.contrib import admin
+from android import views 
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register(r'Employee',views.EmployeeViewSet)
 
 urlpatterns = [
-    url(r'^android/',include('android.urls')),
+	url(r'^rest/',include(router.urls)),
+    url(r'^mobile/',include('android.urls')),
     url(r'^admin/', admin.site.urls),
 ]
