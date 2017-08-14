@@ -6,3 +6,5 @@ from django.apps import AppConfig
 
 class AndroidConfig(AppConfig):
     name = 'android'
+    def ready(self):
+     import android.signals

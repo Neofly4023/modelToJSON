@@ -16,11 +16,10 @@ def employees (request):
 
 	e = Employee.objects.all()
 	dictionary = {}
-	myList = []
-
 	dictionary = [obj.as_dict() for obj in e]
-
-	"""for v in e:
+	
+	"""myList = []
+		for v in e:
 
 		dictionary["last_name"]= v.last_name
 		dictionary["first_name"]= v.first_name
@@ -30,6 +29,12 @@ def employees (request):
 		
 	return HttpResponse(json.dumps({"Employees":dictionary}), content_type='application/json') #JsonResponse(myList,safe=False)
 
+
+def json_request(request):
+
+    e = Employee.objects.all().values("id","last_name", "first_name", "birth_date", "position")
+
+    return JsonResponse({"Employees":list(e)}, safe=False)
 
 
 class EmployeeViewSet(viewsets.ModelViewSet):

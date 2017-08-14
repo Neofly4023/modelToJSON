@@ -17,6 +17,7 @@ from django.conf.urls import url , include
 from django.contrib import admin
 from android import views 
 from rest_framework import routers
+from rest_framework.authtoken import views as v
 
 router = routers.DefaultRouter()
 router.register(r'Employee',views.EmployeeViewSet)
@@ -25,4 +26,5 @@ urlpatterns = [
 	url(r'^rest/',include(router.urls)),
     url(r'^mobile/',include('android.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^api-token-auth/', v.obtain_auth_token),
 ]
