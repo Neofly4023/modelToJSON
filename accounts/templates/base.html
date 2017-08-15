@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>{% block title%}Payroll login API{% endblock %} </title>
+</head>
+<body>
+<div>
+<ul>
+
+<li>
+	<a href="#">Home</a>
+</li>
+
+<li>
+	<a href="#">Alerts</a>
+</li>
+
+{% if user.is_authenticated %}
+<li>
+	<a href="{% url 'logout' %}">Logout</a>
+</li>
+
+
+<li>
+	<a href="#">{{ user.username }}</a>
+</li>
+{% else %}
+
+<li>
+<a href="{% url 'login' %}">Login</a>
+</li>
+
+{% endif %}
+
+</ul>
+</div>
+
+<div>
+   <div>
+<h1>Login Management</h>
+   </div>
+</div>
+
+<div>
+{% block content %}
+{% endblock %}
+</div>
+
+</body>
+</html>
